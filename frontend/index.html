@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Panel de Administración - Sistema de Reservas</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="app-container">
+        <nav class="sidebar">
+            <div class="sidebar-header">
+                <h1>Panel Admin</h1>
+            </div>
+            <ul class="sidebar-menu">
+                <li><a href="#" onclick="loadEntity('Reservation')"><i class="fas fa-calendar-check"></i> Reservaciones</a></li>
+                <li><a href="#" onclick="loadEntity('Category')"><i class="fas fa-tags"></i> Categorías</a></li>
+                <li><a href="#" onclick="loadEntity('Room')"><i class="fas fa-door-closed"></i> Habitaciones</a></li>
+                <li><a href="#" onclick="loadEntity('Client')"><i class="fas fa-users"></i> Clientes</a></li>
+                <li><a href="#" onclick="loadEntity('Message')"><i class="fas fa-comment-dots"></i> Mensajes</a></li>
+            </ul>
+        </nav>
+        <main class="content">
+            <header class="top-bar">
+                <button id="sidebarToggle" class="sidebar-toggle">
+                    <i class="fas fa-bars"></i>
+                </button>
+                <h2 id="entityTitle">Reservaciones</h2>
+                <button id="themeToggle" class="theme-toggle">
+                    <i class="fas fa-moon"></i>
+                </button>
+            </header>
+            <div class="card">
+                <div class="card-header">
+                    <button class="btn btn-primary" onclick="showModal('create')">
+                        <i class="fas fa-plus-circle"></i> Crear Nuevo
+                    </button>
+                </div>
+                <div id="content" class="card-body">
+                    <!-- Contenido dinámico -->
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 id="modalTitle">Crear/Editar</h3>
+                <button class="close-btn" onclick="closeModal()">&times;</button>
+            </div>
+            <div class="modal-body">
+                <form id="entityForm">
+                    <!-- Campos del formulario -->
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-secondary" onclick="closeModal()">Cerrar</button>
+                <button class="btn btn-primary" onclick="saveEntity()">Guardar</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
